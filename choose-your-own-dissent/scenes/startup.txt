@@ -2,7 +2,7 @@
 *author Tom Blount & Lewis Reading
 *scene_list
 	startup
-	
+	horizon
 	before_launch
 	ending
 	death
