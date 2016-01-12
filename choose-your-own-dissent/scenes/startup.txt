@@ -1,0 +1,31 @@
+*title Choose Your Own Dissent
+*author Tom Blount & Lewis Reading
+*scene_list
+  startup
+  horizon
+  
+  ending
+  death
+
+*comment PLAYER STATS
+*comment --------------------------------
+*create Fitness 50
+*create Combat 50
+*create Intelligence 50
+*create Savvy 50
+*create Alertness 50
+*create Charisma 50
+*create Resolve 50
+*create Amiability 50 
+*create Sanity 100
+*create Luck 50
+
+
+*comment GAME VARIABLES
+*comment --------------------------------
+*create pod_ejected "#5"
+
+In CHOOSE YOUR OWN DISSENT you take control of a departing splinter group of an established colony on a barely habitable alien world. You seek to create a new home, after being forced to leave the colony due to disputes with each other and the power-tripping Marshal, who seized control in the chaotic relief efforts following a natural disaster.
+
+*page_break
+*finish
