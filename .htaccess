@@ -1,0 +1,2 @@
+RedirectMatch permanent ^/$ /choose-your-own-dissent/
+RedirectMatch permanent ^/index.html$ /choose-your-own-dissent/
