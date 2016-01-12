@@ -1,146 +1,263 @@
-CHAPTER 1 - BEFORE THE LAUNCH
+*temp time 0
 
-[Location: Home][Time: Early Morning][Date: ---DATE---]
+*comment CHAPTER 1 - BEFORE THE LAUNCH
 
-1. You've been lying in bed for a while now, having woken up early. Your apartment in a worker's residential block in semi-suburban Germany is no dump, but it's no mansion either.
+[b]Location:[/b] [i]Home, Munich, Germany[/i]
+*line_break
+[b]Time:[/b] [i]Early Morning[/i]
+*line_break
+[b]Date:[/b] [i]August 30th, 2077[/i]
+
+You've been lying in bed for a while now, having woken up early. Your apartment in a worker's residential block in semi-suburban Germany is no dump, but it's no mansion either.
 
 A lot of this particular morning has been spent staring at the ceiling, in silent contemplation. About man, about man's destiny...that sort of thing. After all, it will soon be that you're on humanity's first colony ship, the UICSA Axiom-class "Horizon", bound for some distant verdant world unspoiled as yet by mankind's touch.
 
 But, one small step at a time. It needs to be built first, and that's where you come in, and how bought your ticket out of here.
 
-On the bedside table, next to your handheld SmartPanel serving at the moment as an alarm clock, you spy your own face, with its most neutral expression, looking straight back at you from the portrait on your UICSA worker ID card. What gender are you?
+On the bedside table, next to your handheld SmartPanel serving at the moment as an alarm clock, you spy your own face, with its most neutral expression, looking straight back at you from the portrait on your UICSA worker ID card.
 
-# Male.
+What's your name?
 
-- [Set Gender = Male]
+*input_text name
 
-# Female.
+Nice to meet you, ${name}. You quite like it as a name, but you're not sure the ID photo caught your best side.
+
+The bed is warm and as inviting as ever, but you have a job to do. You roll over and see...
+
+*choice
+	# An empty bed.
+
+		*set relationship "none"
 		
-- [Set Gender = Female]
+		The apartment is lonely on its own - it was built for a couple, but then, you get more bed space this way, and no-one's around to tell you what to do or criticise how you spend your time. Still, morning and evening, it's empty and quiet, and it feels like someone important should be here...but they aren't. But you'll be leaving soon, and you couldn't bear to think what it'd be like if you had a partner who couldn't come with you. You've even refused a date for just that reason, despite not having that many chances for love since moving to mainland Europe with the UICSA.  Well, it's for the best. Perhaps there will be someone nice on New Earth?
 
-2. And what's your name?
 
-# [Namebox]
-		
-- [Set Name = 'Name']
+		[Resolve +5, Savvy +5, Charisma -5]
 
-3. Nice to meet you, 'Name'. You quite like it as a name, but you're not sure the ID photo caught your best side.
+		[Set Relationship = None]
 
-4. The bed is warm and as inviting as ever, but you have a job to do. You roll over and see...
+		*page_break
 
-# An empty bed.
-	
-- The apartment is lonely on its own - it was built for a couple, but then, you get more bed space this way, and no-one's around to tell you what to do or criticise how you spend your time. Still, morning and evening, it's empty and quiet, and it feels like someone important should be here...but they aren't. But you'll be leaving soon, and you couldn't bear to think what it'd be like if you had a partner who couldn't come with you. You've even refused a date for just that reason, despite not having that many chances for love since moving to mainland Europe with the UICSA.  Well, it's for the best. Perhaps there will be someone nice on New Earth?
+		*goto morning
 
-- [Resolve +5, Savvy +5, Charisma -5]
+	# Your partner, quietly reminding you not to be late.
 
-- [Set Relationship = None]
+		*set relationship "partner"
 
-# Your partner, quietly reminding you not to be late.
+		A little part of you is always a little worried that the next time you look across to that side of the bed, they won't be there. And, soon enough, you'll be leaving them behind. But you've both come to terms with it, and you're spending what precious time you get together as if nothing else in the world matters. They clasp their hands over yours before you decide to get up and get ready. At some point, you'll both move on, of that you're sure.
 
-- A little part of you is always a little worried that the next time you look across to that side of the bed, they won't be there. And, soon enough, you'll be leaving them behind. But you've both come to terms with it, and you're spending what precious time you get together as if nothing else in the world matters. They clasp their hands over yours before you decide to get up and get ready. At some point, you'll both move on, of that you're sure.
+		[Charisma +5, Amiability +5, Resolve -5]
 
-- [Charisma +5, Amiability +5, Resolve -5]
+		[Set Relationship = Partner]
 
-- [Set Relationship = Partner]
+		*page_break
 
-# Your roommate and fellow colonist, still snoring loudly.
+		*goto morning
 
-- Mattias Nacht, or Matty to his friends, was never good with mornings, so you give him a good strong poke in the shoulder and flee the bed before he has time to retaliate. You emigrated to Germany as part of the work contract with the UICSA, and had trouble dealing with the change. At least, until you met him. You two are solid friends...
+	# Your roommate and fellow colonist, still snoring loudly.
 
-...as long as he can remember that he has a job to do. Still, life in Germany would have been so much trickier (and probably not as fun) without him about, and it reassures you that he will be coming with you on the Horizon. There will be at least one familiar face when you arrive, and that's enough. He grumbles, and it takes him about five minutes longer before he follows your example and gets out of bed.
+		*set relationship "coworker"
 
-- [Amiability +5, Sanity +5, Savvy -5]
+		Mattias Nacht, or Matty to his friends, was never good with mornings, so you give him a good strong poke in the shoulder and flee the bed before he has time to retaliate. You emigrated to Germany as part of the work contract with the UICSA, and had trouble dealing with the change. At least, until you met him. You two are solid friends...
 
-- [Set Relationship = Coworker]
+		...as long as he can remember that he has a job to do. Still, life in Germany would have been so much trickier (and probably not as fun) without him about, and it reassures you that he will be coming with you on the Horizon. There will be at least one familiar face when you arrive, and that's enough. He grumbles, and it takes him about five minutes longer before he follows your example and gets out of bed.
 
-5. The morning rituals of showering and eating breakfast takes you less time than it normally does today, and for once you find yourself with a little extra time. What will you do with it?
+		[Amiability +5, Sanity +5, Savvy -5]
 
-# Head to work early.
+		[Set Relationship = Coworker]
 
-- [if Relationship = None]
+		*page_break
 
-- In the short time you spend pondering it, you decide that you don't fancy doing anything, and 		  	  that it would be better to take advantage of your quicker preparations to beat the morning rush
-		
-- [if Relationship = Partner]
+		*goto morning
 
-- "You feeling alright?" Your partner asks as you make for the front door.
+*comment --------------------------------------------------------------------------------------
 
-"Yeah, I just feel like today's going to be a busy day, so I'd better get going." You reply.
+*label morning
 
-"Well, alright then...have a good day. Don't be too late." They seem a little terse as you turn away to open the front door. You walk over to kiss them on the cheek, but they don't seem as receptive as normal....
+*if(time = 0)
+	The morning rituals of showering and eating breakfast takes you less time than it normally does today, and for once you find yourself with a little extra time. What will you do with it?
 
-- [Amiability -2, Resolve +1]
+*if(time = 1)
+	There's still a little time before you really [i]need[/i] to head off.
 
-- [if Relationship = Coworker]
+*if(time = 2)
+	Alright, it's probably time to go.
 
-- "Wait what?! Hold on!" Matty protests. "What's with the rush?"
+*if(time = 3)
+	You're pushing it, but you can probably still make it in time!
 
-"I just feel like it. You don't have to come with me." You reply.
+*if(time = 4)
+	You're really running late now!
 
-"Damnit." Matty leaves the rest of his cereal on the side and hurriedly dons his coat, following you out the front door. He locks it behind him, but not before frowning at you.
+*choice
 
-- [Amiability -2, Resolve +1]
+	*hide_reuse *selectable_if(time < 4) #Check the morning news
 
-# Check the morning news.
+		*set time (time + 1)
 
-- You plug your SmartPanel into the small projector on the table, and set the broadcasting channel to UIC World Today. Articles professional in appearance but sensational in style adorn one side of the projection with big, arresting titles such as 'Famine At All-Time High' and 'American Government Blocks International Aid'. The other side features a man with a simply downright untrustworthy smile interviewing a Confederate Army commander about the UIC's cold war with the North Chinese.
+		You plug your SmartPanel into the small projector on the table, and set the broadcasting channel to UIC World Today. Articles professional in appearance but sensational in style adorn one side of the projection with big, arresting titles such as 'Famine At All-Time High' and 'American Government Blocks International Aid'. The other side features a man with a simply downright untrustworthy smile interviewing a Confederate Army commander about the UIC's cold war with the North Chinese.
 
-It's depressing news, but it nearly always is, and you like to keep informed. It's not for certain that Germany is protected from any form of hostile attack, and any forewarning about an invasion or incoming nuke - or whatever weapon of mass destruction they have to hand - is better than none. Today thankfully seems like a day where the threat of obliteration is minimal.
+		It's depressing news, but it nearly always is, and you like to keep informed. It's not for certain that Germany is protected from any form of hostile attack, and any forewarning about an invasion or incoming nuke - or whatever weapon of mass destruction they have to hand - is better than none. Today thankfully seems like a day where the threat of obliteration is minimal.
 
-- [Intelligence +2, Savvy +2, Resolve -3]
+		[Intelligence +2, Savvy +2, Resolve -3]
 
-# Do some light exercise.
+		*goto morning
 
-- You decide to do a few reps of a workout routine that a SmartPanel e-zine tells you gives "guaranteed results". It's easy enough for someone of your general health and physique. You don't feel much fitter, but your mind is a lot clearer, and you feel a little happier. It seems to have exercised all the key muscles too, so keeping up with it might well have some other benefits in the long term too.
+	*hide_reuse *selectable_if(time < 4) #Do some light exercise
 
-# Prepare some lunch.
+		*set time (time + 1)
 
-- The cafeteria complex at the UICSA headquarters has some decent food (and one of the boons of being a colonist is that you don't need to pay for it), but today you feel like something different. The fridge is not very well stocked, but this is not the first time you've had to be creative with cooking, and you doubt it will be the last. With relative ease you prepare something that tastes rather good, and pack it away into your rucksack. Who knows - it could be one of those awful days where there's no time for lunch break, and instead you'll get to enjoy it on the way home.
+		You decide to do a few reps of a workout routine that a SmartPanel e-zine tells you gives "guaranteed results". It's easy enough for someone of your general health and physique. You don't feel much fitter, but your mind is a lot clearer, and you feel a little happier. It seems to have exercised all the key muscles too, so keeping up with it might well have some other benefits in the long term too.
 
-# Write a Panel-Mail to your relatives.
+		*goto morning
 
-- Contacting your family is something you mean to do more often. Since you have the time, you decide to sit down and send some mail. Your family is scattered across the planet and it has been a long time since you've seen some of them. With your work schedule and international political tension, going to see anyone outside Germany is impossible - this mail will most likely be the last contact you have with any of them. You don't manage to finish it by the time you need to leave, so you save it and make a mental note to finish it this evening. On the way to work, you ponder how your family is doing, and hope they're staying safe.
+	*hide_reuse *selectable_if(time < 4) #Prepare some lunch
 
-# Put something brainless on, and zone out for a bit.
+		*set time (time + 1)
 
-- Today's going to be as hectic and tiring as it always is - a little bit of subconscious preparation whilst your conscious mind drifts off into uncaring bliss suits your current fancy well. The SmartPanel offers a number of mind-numbing reality shows and re-runs of classic series, and without the time to sift for something genuinely entertaining you put 'Celebrity Famine Fighters' on. It amuses you a little - soon enough, the world's problems will no longer be a concern of yours. And an awful lot of the horrid, arrogant 'celebrities' like those on the projection will be trapped on it as it all goes to hell. A bleak outlook, but one that happily doesn't involve you.
+		The cafeteria complex at the UICSA headquarters has some decent food (and one of the boons of being a colonist is that you don't need to pay for it), but today you feel like something different. The fridge is not very well stocked, but this is not the first time you've had to be creative with cooking, and you doubt it will be the last. With relative ease you prepare something that tastes rather good, and pack it away into your rucksack. Who knows - it could be one of those awful days where there's no time for lunch break, and instead you'll get to enjoy it on the way home.
 
-----------------------------------------------------
+		*goto morning
 
-[Date/Time/Loc]
+	*hide_reuse *selectable_if(time < 4) #Write a Panel-Mail to your relatives
 
-1. You've arrived at work, and are currently sitting in a window-seat on the intra-agency tram. You're waiting for the stop outside your division. Which stop do you get off at?
+		*set time (time + 1)
 
-# Med-Sci, Colonist Clearance.
+		Contacting your family is something you mean to do more often. Since you have the time, you decide to sit down and send some mail. Your family is scattered across the planet and it has been a long time since you've seen some of them. With your work schedule and international political tension, going to see anyone outside Germany is impossible - this mail will most likely be the last contact you have with any of them. You don't manage to finish it by the time you need to leave, so you save it and make a mental note to finish it this evening. On the way to work, you ponder how your family is doing, and hope they're staying safe.
 
-- The fresh white paint job looks good on the Med-Sci complex, as you walk in the staff entrance for the Medical sector. The line of prospective colonists coming in for today's round of examination, surgery and fitness testing is already threatening to go out the public entrance and onto the tramline. There are still an awful lot of people to process, and today looks like it's going to be as busy as ever.
+		*goto morning
 
-- You make your way down some sterile hallways, looking in on some men and women covered in sensor and electrostimulation pads running on treadmills, whilst others lie beneath a haze of blue holographic lights and an array of medical analyser probes. There are strict parameters that a human body must fall within in order for long-term cryonic stasis to be feasible, and those colonists who don't already fit the mould need to be treated quickly.
+	*hide_reuse *selectable_if(time < 4) #Put something brainless on, and zone out for a bit
 
-Your years of hospital training has made you used to long hours and applying your expertise correctly throughout, along with giving you a fair bit of sensitivity to your fellow man's plight. And of course, your job needs you to be the very pinnacle of human fitness that you're making everyone else conform to.
+		*set time (time + 1)
 
-# Med-Sci, Technical Laboratories.
+		Today's going to be as hectic and tiring as it always is - a little bit of subconscious preparation whilst your conscious mind drifts off into uncaring bliss suits your current fancy well. The SmartPanel offers a number of mind-numbing reality shows and re-runs of classic series, and without the time to sift for something genuinely entertaining you put 'Celebrity Famine Fighters' on. It amuses you a little - soon enough, the world's problems will no longer be a concern of yours. And an awful lot of the horrid, arrogant 'celebrities' like those on the projection will be trapped on it as it all goes to hell. A bleak outlook, but one that happily doesn't involve you.
 
-- The R&D sector of the Med-Sci complex looks good, though only from the front where the public enters. Your entrance is further back, through an older (but still quite snazzy) metal arch lined with gleaming patterned glass. Though much of the hard work has already been done, R&D is still busy with coming up with the minute technical improvements that all the UICSA big-wigs want to see.
+		*goto morning
 
-- Another day, another sensor malfunction. But this is all experimental stuff, and at least it's failing here and not in the hands of Medical or Engineering. It's something in the software, or there's a signal coming from somewhere it shouldn't. At least it's not interfering with the robotics laboratories, and this isn't something that's likely to lead to having to pry a gripper off of one of your colleagues.
+	*if (relationship = "partner")
+		*hide_reuse *selectable_if(time < 4) #Spend time with your partner
 
-Your job demands a very analytical mind with a wealth of knowledge, and not just in the areas of computing and physics either. The job is satisfying, though while the Horizon looms overhead, any progress you make seems almost token by comparison.
+			*set time (time + 1)
 
-# Construction Hangars.
+			TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 
-- The size of the UICSA's biggest surface maintenance hangar makes the Engineering Division building attached to it look comically small, and even that contains hundreds of warehouses and production lines. One of the largest orbital cargo shuttles is taxying from another hangar further back to a launch rail. How Engineering manages to find the time to keep the colossal fleet of the Agency's spacefaring vessels fully-maintained and not falling out of the sky still remains a mystery to you - and you work with them.
+			*goto morning
 
-# Central Administration Building, HR & Personnel.
+	*if (relationship = "coworker")
+		*hide_reuse *selectable_if(time < 4) #Hang out with Matty
 
-- Being the building that always shows up on the SmartPanel whenever the Confederacy's pet news service wants to do a story on it, the Central Administration is the shiniest and most imposing of any of the Divisions. You can see your window from down on the ground - on floor twelve, overlooking one of the immaculate robotically-maintained gardens. The HR division is one of the biggest in the building, managing and monitoring every single one of the Agency's employees.
+			*set time (time + 1)
 
-# Central Administration Building, Central Security.
+			TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 
-- No big building for the unsung heroes of the UICSA - but that's alright, because this far into Confederacy territory, there's not much trouble. Security has at least one desk in every building, but your chair is behind one of the biggest ones that still belongs to an officer and not some ex-military jarhead. You patrol the fairly busy perimeter roads from time to time, but otherwise spend your time waiting for a report of an altercation between one employee and another in order to step in.
+			*goto morning
 
-# Deliveries.
+	*selectable_if(time < 1) #Head to work early
 
-- The vast majority of the roads and maglev rails that enter the UICSA are not for the workers and transiting Horizon colonists, but for the vast quantities of resources and deliveries. Sure, it's still expensive to get most of it up there, and most of the hull is mined from asteroids and processed millions of miles away from Earth, but there's still an awful lot that's only available down here. If it wasn't for Deliveries, the mire of bureaucracy and electronic supply manifests would instead swamp the Central Administration, and even they couldn't handle the astounding and humbling amount that Deliveries has to deal with on a regular basis.
+		*if (relationship = "none")
 
+			In the short time you spend pondering it, you decide that you don't fancy doing anything, and that it would be better to take advantage of your quicker preparations to beat the morning rush
+				
+		*if (relationship = "partner")
+
+			"You feeling alright?" Your partner asks as you make for the front door.
+
+			"Yeah, I just feel like today's going to be a busy day, so I'd better get going." You reply.
+
+			"Well, alright then...have a good day. Don't be too late." They seem a little terse as you turn away to open the front door. You walk over to kiss them on the cheek, but they don't seem as receptive as normal....
+
+			[Amiability -2, Resolve +1]
+
+		*if (relationship = "coworker")
+
+			"Wait what?! Hold on!" Matty protests. "What's with the rush?"
+
+			"I just feel like it. You don't have to come with me." You reply.
+
+			"Damnit." Matty leaves the rest of his cereal on the side and hurriedly dons his coat, following you out the front door. He locks it behind him, but not before frowning at you.
+
+			[Amiability -2, Resolve +1]
+
+		*goto work
+
+	*if(time > 0) 
+		*selectable_if(time < 4) #Head to work
+			[Amiability -2, Resolve +1]
+
+			*goto work
+
+	*if(time = 4) #Rush to work, late!
+
+		[Amiability -2, Resolve +1]
+
+		*goto work
+
+*comment --------------------------------------------------------------------------------------
+
+*label work
+
+[b]Location:[/b] [i]UICSA HQ, Munich, Germany[/i]
+*line_break
+[b]Time:[/b] [i]Mid Morning[/i]
+*line_break
+[b]Date:[/b] [i]August 30th, 2077[/i]
+
+You've arrived at work, and are currently sitting in a window-seat on the intra-agency tram. You're waiting for the stop outside your division. Which stop do you get off at?
+
+*choice
+	# Med-Sci, Colonist Clearance
+
+		*set job "Medical Doctor"
+
+		The fresh white paint job looks good on the Med-Sci complex, as you walk in the staff entrance for the Medical sector. The line of prospective colonists coming in for today's round of examination, surgery and fitness testing is already threatening to go out the public entrance and onto the tramline. There are still an awful lot of people to process, and today looks like it's going to be as busy as ever.
+
+		You make your way down some sterile hallways, looking in on some men and women covered in sensor and electrostimulation pads running on treadmills, whilst others lie beneath a haze of blue holographic lights and an array of medical analyser probes. There are strict parameters that a human body must fall within in order for long-term cryonic stasis to be feasible, and those colonists who don't already fit the mould need to be treated quickly.
+
+		Your years of hospital training has made you used to long hours and applying your expertise correctly throughout, along with giving you a fair bit of sensitivity to your fellow man's plight. And of course, your job needs you to be the very pinnacle of human fitness that you're making everyone else conform to.
+
+		*finish
+
+	# Med-Sci, Technical Laboratories
+
+		*set job "Medical Researcher"
+
+		The R&D sector of the Med-Sci complex looks good, though only from the front where the public enters. Your entrance is further back, through an older (but still quite snazzy) metal arch lined with gleaming patterned glass. Though much of the hard work has already been done, R&D is still busy with coming up with the minute technical improvements that all the UICSA big-wigs want to see.
+
+		Another day, another sensor malfunction. But this is all experimental stuff, and at least it's failing here and not in the hands of Medical or Engineering. It's something in the software, or there's a signal coming from somewhere it shouldn't. At least it's not interfering with the robotics laboratories, and this isn't something that's likely to lead to having to pry a gripper off of one of your colleagues.
+
+		Your job demands a very analytical mind with a wealth of knowledge, and not just in the areas of computing and physics either. The job is satisfying, though while the Horizon looms overhead, any progress you make seems almost token by comparison.
+
+		*finish
+
+	# Construction Hangars
+
+		*set job "Construction"
+
+		The size of the UICSA's biggest surface maintenance hangar makes the Engineering Division building attached to it look comically small, and even that contains hundreds of warehouses and production lines. One of the largest orbital cargo shuttles is taxying from another hangar further back to a launch rail. How Engineering manages to find the time to keep the colossal fleet of the Agency's spacefaring vessels fully-maintained and not falling out of the sky still remains a mystery to you - and you work with them.
+
+		*finish
+
+	# Central Administration Building, HR & Personnel
+
+		*set job "Human Resources"
+
+		Being the building that always shows up on the SmartPanel whenever the Confederacy's pet news service wants to do a story on it, the Central Administration is the shiniest and most imposing of any of the Divisions. You can see your window from down on the ground - on floor twelve, overlooking one of the immaculate robotically-maintained gardens. The HR division is one of the biggest in the building, managing and monitoring every single one of the Agency's employees.
+
+		*finish
+
+	# Central Administration Building, Central Security
+
+		*set job "Security"
+
+		No big building for the unsung heroes of the UICSA - but that's alright, because this far into Confederacy territory, there's not much trouble. Security has at least one desk in every building, but your chair is behind one of the biggest ones that still belongs to an officer and not some ex-military jarhead. You patrol the fairly busy perimeter roads from time to time, but otherwise spend your time waiting for a report of an altercation between one employee and another in order to step in.
+
+		*finish
+
+	# Deliveries and Logistics
+
+		*set job "Deliveries and Logistics"
+
+		The vast majority of the roads and maglev rails that enter the UICSA are not for the workers and transiting Horizon colonists, but for the vast quantities of resources and deliveries. Sure, it's still expensive to get most of it up there, and most of the hull is mined from asteroids and processed millions of miles away from Earth, but there's still an awful lot that's only available down here. If it wasn't for Deliveries, the mire of bureaucracy and electronic supply manifests would instead swamp the Central Administration, and even they couldn't handle the astounding and humbling amount that Deliveries has to deal with on a regular basis.
+
+		*finish

@@ -1,3 +1,12 @@
+*if not(name = "")
+	[b]Character:[/b]
+	*stat_chart
+		text Name
+
+*if not(job = "")
+	*stat_chart
+		text job UICSA Role
+
 
 [b]Stats:[/b]
 *stat_chart
@@ -8,9 +17,11 @@
 	percent Resolve
 	percent Luck
 	percent Sanity
+	opposed_pair Cool
+		Rash
+
 
 [b]Traits:[/b]
-
 e.g. Engineering Expertise, Agricultural Expertise, Technological Expertise, etc.
 - not a numerical stat, but rather a single "property" of the character, defined during character creation one way or another
 
