@@ -1,11 +1,17 @@
 *title Choose Your Own Dissent
 *author Tom Blount & Lewis Reading
 *scene_list
-  startup
-  horizon
-  
-  ending
-  death
+	startup
+	
+	before_launch
+	ending
+	death
+
+*comment PLAYER
+*comment --------------------------------
+*create name ""
+*create job ""
+*create relationship ""
 
 *comment PLAYER STATS
 *comment --------------------------------
@@ -19,6 +25,7 @@
 *create Amiability 50 
 *create Sanity 100
 *create Luck 50
+*create Cool 50
 
 
 *comment GAME VARIABLES
