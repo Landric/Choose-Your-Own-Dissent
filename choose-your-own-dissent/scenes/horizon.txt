@@ -1,0 +1,280 @@
+*comment [b]WAKE UP[/b]
+
+[b]Date:[/b] [i]February 12th, 2220[/i]
+*line_break
+[b]Time:[/b] [i]Unknown[/i]
+*line_break
+[b]Location:[/b] [i]UICSA Colony Ship "Horizon", Pod #5 Airlock[/i]
+
+It is cold. You are barely an hour out of your cryosleep pod - it usually takes much longer for the shivers to stop.
+
+You see a long walkway through the airlock windows. Line after line of cryosleep pods on either side fill the enormous chamber with their characteristic turquoise glow, through the partitioning windows and gratings. Every black speck inside is another fellow colonist. Not all that different from yourself. All in all, there are twenty thousand of them on the other side of the glass.
+
+Above the door is a heavy-duty lever, next to a keycard authenticator and a keypad. Two words label it: "EMERGENCY EJECT". Half of your face is still visible on your ID slotted into the reader, and the six-digit ejection code is illuminated on the pad. The orange priming light next to the lever is on.
+
+The Horizon's primary reactor is failing. The truth is simple; there is not enough power for everyone. The denizens of Pod #5 are not amongst the lucky forty percent who get to continue on your journey. This is what has to be done, as determined by Command. A hollow groan reverberates from the maintenance tunnel above you, that extends the length of the Horizon.
+
+"Pod #18 ejection complete." A tearful and cracked voice comes in over your headset.
+
+Here you are, about to perform a duty few others wanted. Pod #5, primed for ejection into deep space.
+
+*temp speech false
+*temp hesitations 0
+*label pull_choice
+*choice
+	#Pull the lever before you have a chance to stop yourself
+		*if not(speech)
+			This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
+
+			*comment *if(hesitation = 0)
+			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
+
+			*comment *if(hesitation = 1)
+			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
+
+			*comment *if(hesitation = 2)
+			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
+
+		*goto pull
+
+	*hide_reuse #Honour them with some last words over the headset
+		*set speech true
+		*gosub speak
+		*goto pull_choice
+
+	*if(hesitations > 0) #Radio in that you can't do it
+		*goto radio
+
+	*if(hesitations > 1) #Go through the manifest of Pod #5
+		*goto manifest
+
+	#Hesitate
+		*set hesitations (hesitations + 1)
+
+		*if(hesitations = 1)
+			Try though you may to convince yourself that it is necessary, you cannot bring yourself to pull the lever.
+
+			But this is your job, and if you don't do it, someone else will. Pod #5's fate is sealed either way. It is somewhat little consolation that right now you are looking in on the pod, and not one of those slumbering inside.
+
+			You feel almost entitled to question the turn of events, or at least have some time to come to terms with it. This isn't putting people out of their misery, or dealing with someone who has wronged you. These are twenty thousand completely innocent colonists who were promised an alien paradise and will receive an unceremonious eternity adrift in interstellar space.
+
+			If you don't do it, someone else will. Maybe someone else can.
+			
+		*if(hesitations = 2)
+			Once again, you can't bring yourself to pull the lever.
+
+			If you pull that lever, you will kill them. You feel that you will have that on your conscience forever.
+
+			You find yourself wondering who is in the doomed pod.
+
+		*if(hesitations = 3)
+			*goto failed
+
+		*if(hesitations > 3)
+			*bug
+
+		*goto pull_choice
+
+*comment --------------------------------------------------------------------------------------
+
+*label pull
+
+From the beginning, everyone who got onboard was made to understand what they would have to make sacrifices in order to ensure that the mission was successful. Colonisation of a new world was dangerous. There were going to be losses.
+
+You pull the lever down. There is a series of loud scraping noises and clunks. The chamber airlock seems to extend briefly, until Pod #5 drifts away at an angle. You can no longer see any faces of anyone inside. Duty called...you responded.
+
+It is a while before your eyes are clear of tears, and you can bring yourself to let go of the ejection lever. "Pod #5 ejection complete." You speak over the headset, as you pull your ID out of the reader.
+
+If you could slump in zero gravity, you would. But instead, you just lie there until ventilation airflow rests you against the metal hull.
+
+*page_break
+
+*goto report
+
+*comment --------------------------------------------------------------------------------------
+
+*label speak
+
+What would you like to say?
+*choice
+	# A promise of remembrance.
+
+		"Pod #5, we will never forget you. We will never forget anyone who will never make it to our new home. Please forgive us."
+
+		It's not much, but it's something.		
+
+		*comment [Amiability +20, Resolve -10]
+
+		*return
+
+	# A few words on the virtues of sacrifice.
+
+		You mimick the tone of your square-jawed Mission Commander. "Sacrifice is a noble virtue, even if those who have to sacrifice were not given a choice. For the sake of the success of the mission, and those who can yet make it, your sacrifice is necessary. We have no other options. On behalf of the remaining colonists and crewmen of the Horizon, I bid you farewell, and apologise for your bad fortune."
+
+		*comment [Intelligence +10, Savvy +10, Amiability -10]
+
+		*return
+
+
+	# Something about cosmic irony.
+
+		You make a few brief points on how shitty luck it was that they would die in the depths of space simply trying to get away from death by war or famine on Earth, the only home man has ever known. There was nothing left for them back on Earth, and now there will never be anything for them up here in the stars.
+
+		*comment [Sanity +20,
+
+		*return
+
+	# A religious mantra.
+
+		Faith has, for the longest time, been a source of guidance and wisdom. Now that the final flight of Pod #5 is yours to launch, you feel your own faith is being tested. You offer a few prayers, and console yourself with the knowledge that what lies beyond these mortal men and women's reckoning is a forgiving God, who will accept them all without question.
+
+		*comment [Sanity +20,
+
+		*return 
+
+*comment --------------------------------------------------------------------------------------
+
+
+*label radio
+Time is short, but you have dug deep in search of the courage and come back with nothing. This needs to be done, but it will have to be someone else.
+
+"I can't do it." Your voice is raspy and hoarse.
+
+"Acknowledged. Leave it to me. Head back to command."
+
+"Sorry."
+
+"No need for apologies. Don't worry about it."
+
+You expected more of a repercussion for your failure, but it seems the only people listening in on the headset at the moment are the crew dispatched to perform the pod ejections, and you all accepted your duties with a heavy heart. You get the impression that you are not the only person who couldn't fulfil theirs.
+
+You pull yourself into the maintenance shaft and back along the guide cable to the command module.
+
+*page_break
+
+*goto report
+
+*comment --------------------------------------------------------------------------------------
+
+*label manifest
+
+Even though you know it's a bad idea, you can't stop your eyes skimming the colonist manifest. You have a lot of people you know on Pod #5, even though they are mostly acquaintances. Even so, there are a lot of names on that list that you would really rather not be responsible for killing.
+
+It occurs to you after a lengthy period of pondering that, given the circumstances, between this one and #6 opposite, there isn't an enormous amount of difference - save for the fact that #5 contains more friendly faces.
+
+Pod #6 was not one of the pods drawn in the ejection lottery, but the fact remains that you will have still done your part to solve the power crisis, and people are having to deal with the loss of people they knew either way.
+
+*choice
+
+	# Orders are orders. Pod #5 it is.
+
+		Your courage is wavering, but your sense of duty is strong. This was your task, and you find renewed will in knowing that you were capable of seeing it through to the end. #5 was selected through random chance, and there is no point in holding a lottery if someone can choose the result.
+
+		And the people in #6 have friends aboard too - who will want to see them after a century and a half spent asleep. To you, it's not about who you knew, but the fact that there are others still onboard who were lucky enough to have people they knew not in a pod selected for ejection. The outcome was chosen fairly, and you were amongst those who lost out. But that's the way it has to be. 
+
+		You pull the lever and watch for only a moment as the people you knew drift away to an eternal slumber. You pull out your ID card from the reader and pull yourself out into the maintenance shaft and along to the command module.
+
+		*goto report
+
+	# I'd rather spend the rest of my life with people I know. Pod #6 is going instead.
+
+		You launch yourself across the maintenance shaft, remembering to take the card with you and enter the disengaging code.
+
+		On the other side, you slide open the launch priming hatch, insert your ID, and punch in the priming code. The window through the airlock into Pod #6 has fogged up - probably for the best. It came down to a choice between a pod with people you like, and a pod of people you don't know. The choice was obvious. Someone was going to lose out either way.
+
+		You pull the lever and all you know is the same sound you heard from down the shaft, and a slow darkening of the view beyond the fog. Removing your ID, you contemplate who you just ejected - and who you just saved - and make for the command module.
+
+		*set pod_ejected "#6"
+
+		*goto report
+
+	# Hesitate.
+		*goto failed
+
+*comment --------------------------------------------------------------------------------------
+
+*label failed
+
+You made the mistake of giving yourself a choice with equally distasteful consequences, and in your attempt to rationalise which would be better, you lead yourself around in circles until you eventually concede that you simply cannot bring yourself to do it.
+
+You leave the ejection bay and find a quiet corner in the cargo deck between two large machines to curl up and cry. After a while, a rational but sympathetic woman dispatched to take care of Pod #19's ejection locates you via your medical sensors and hands you back your ID card. She offers you a hug.
+
+"Don't worry, I don't plan on telling anyone you couldn't do it."
+
+"Thanks."
+
+"You're not the only one who couldn't do it. I was tasked with one and I ended up doing four."
+
+"How do you deal with it?" You ask, knowing already that the answer would be unsatisfactory.
+
+"I'm trying not to think about it. I did what I had to. We did what we had to. I'm sure I'll have a nightmare or two about it, but for now, I'm staying calm." She puts her hand on your shoulder. "Don't be too late back to the command module. But, if you need more time, make sure you take it."
+
+She pulls herself back around to the main bay and glides out of sight.
+
+*page_break
+
+*goto report
+
+*comment --------------------------------------------------------------------------------------
+
+*label report
+
+*if(pod_ejected = "#5")
+
+	You use one of the guiding ropes to pull you into the lonely flight back to the command module. What just happened doesn't seem to have sunk in yet, and you hope against hope that it never does.
+
+	You pull yourself into flight down the maintenance shaft, shaking your head slightly. Perhaps there's a certain cowardly Mission Commander still loitering around in the command module for you to take out your anger on. In fact, that would be perfect.
+
+	Sure enough, you arrive at the command module, and the Mission Commander is there, holding a SmartPanel.
+
+	*choice
+
+		#Calmly report the situation and return to your standard duties
+
+			"Acknowledged. You undertook a difficult duty, crewman. I hope your sense of duty remains as strong throughout."
+
+			You don't really want to hear anything from the man, but at least he appreciates what you've done.
+
+			*comment [Savvy +10, Resolve +10, Sanity -10, Amiability -10]
+
+			*page_break
+			
+			*goto end
+
+		#Angrily report the situation and question the orders
+
+			TEXT TEXT TEXT TEXT
+
+			*comment [Combat Skill +10, Sanity +10, Savvy -20]
+
+			*page_break
+
+			*goto end
+
+		#Take a swing at him
+
+			It lands squarely in the side of his face with a satisfying thump, and in zero-gravity he cartwheels across the room until stopping himself. He looks at you straight in the eyes. You can tell that he made no attempt to block or dodge.
+
+			"I thought something like this might happen. This once, and this once only, your transgression will be overlooked. I remind you that we are still on a mission, and our jobs are far from over. Don't let this define your attitude."
+
+			What you did was stupid, but now you feel quite a bit better.
+
+			*comment [Combat Skill +10, Sanity +10, Savvy -20]
+
+			*page_break
+
+			*goto end
+*else
+
+
+*comment --------------------------------------------------------------------------------------
+
+*label end
+
+Time passes, and soon, it is twenty minutes before your scheduled return to cryosleep. You are reading at a console next to your special maintenance crew chambers. As of about two hours ago, the last of the twelve selected colony pods had been ejected, leaving just the lucky remaining eight.
+
+The whole process has been stressful, and it's painful to continue thinking about it. But your selected reading material provides no solace, and you feel worn out - enough to get into the pod early. In the back of your mind, the thought of people in Pod ${pod_ejected}. You wonder, as you clamber into the cryochamber, if you'll ever leave it. But barring some truly life-threatening catastrophe, you will wake up again.
+
+As the chill enters your bones, you find yourself reminiscing about happier times....
+
+*finish
