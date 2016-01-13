@@ -21,20 +21,20 @@ Here you are, about to perform a duty few others wanted. Pod #5, primed for ejec
 *temp hesitations 0
 *label pull_choice
 *choice
-	*if(hesitation = 0) #Pull the lever before you have a chance to stop yourself
+	*if(hesitations = 0) #Pull the lever before you have a chance to stop yourself
 		This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
 
 		*goto pull
 		
-	*if(hesitation > 0) #Pull the lever
+	*if(hesitations > 0) #Pull the lever
 	
-		*comment *if(hesitation = 0)
+		*comment *if(hesitations = 0)
 			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
 
-		*comment *if(hesitation = 1)
+		*comment *if(hesitations = 1)
 			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
 
-		*comment *if(hesitation = 2)
+		*comment *if(hesitations = 2)
 			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
 			
 		*goto pull
@@ -238,6 +238,8 @@ She pulls herself back around to the main bay and glides out of sight.
 
 			*comment [Savvy +10, Resolve +10, Sanity -10, Amiability -10]
 
+			set cool %+10
+
 			*page_break
 			
 			*goto end
@@ -247,6 +249,8 @@ She pulls herself back around to the main bay and glides out of sight.
 			TEXT TEXT TEXT TEXT
 
 			*comment [Combat Skill +10, Sanity +10, Savvy -20]
+
+			set cool %-10
 
 			*page_break
 
@@ -260,12 +264,20 @@ She pulls herself back around to the main bay and glides out of sight.
 
 			What you did was stupid, but now you feel quite a bit better.
 
+			set cool %-40
+
 			*comment [Combat Skill +10, Sanity +10, Savvy -20]
 
 			*page_break
 
 			*goto end
 *else
+
+	WHAT DID YOU DO?!
+
+	*page_break
+
+	*goto end
 
 
 *comment --------------------------------------------------------------------------------------
