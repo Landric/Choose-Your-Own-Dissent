@@ -19,14 +19,16 @@ The Horizon's primary reactor is failing. The truth is simple; there is not enou
 Here you are, about to perform a duty few others wanted. Pod #5, primed for ejection into deep space.
 
 *temp hesitations 0
+*temp speech false
 *label pull_choice
 *choice
-	*if(hesitations = 0) #Pull the lever before you have a chance to stop yourself
-		This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
+	*if ((hesitations = 0) and (not(speech))) #Pull the lever before you have a chance to stop yourself
+		*if not(speech)
+			This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
 
 		*goto pull
 		
-	*if(hesitations > 0) #Pull the lever
+	*if ((hesitations > 0) or (speech)) #Pull the lever
 	
 		*comment *if(hesitations = 0)
 			*comment[Resolve +30, Savvy +10, Intelligence +10, Amiability -30, Sanity -10]
@@ -40,6 +42,7 @@ Here you are, about to perform a duty few others wanted. Pod #5, primed for ejec
 		*goto pull
 	
 	*hide_reuse #Honour them with some last words over the headset
+		*set speech true
 		*gosub speak
 		*goto pull_choice
 
