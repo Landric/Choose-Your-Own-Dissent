@@ -27,10 +27,19 @@
 *create Luck 50
 *create Cool 50
 
+*comment COLONY STATS
+*comment --------------------------------
+*create Food 100
+*create Water 100
+*create Power 100
+*create Happiness 25
+*create Population 15000
+
 
 *comment GAME VARIABLES
 *comment --------------------------------
 *create pod_ejected "#5"
+*create colony_founded false
 
 In CHOOSE YOUR OWN DISSENT you take control of a departing splinter group of an established colony on a barely habitable alien world. You seek to create a new home, after being forced to leave the colony due to disputes with each other and the power-tripping Marshal, who seized control in the chaotic relief efforts following a natural disaster.
 

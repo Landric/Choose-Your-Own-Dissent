@@ -6,6 +6,7 @@
 *if not(job = "")
 	*stat_chart
 		text job UICSA Role
+	*line_break
 
 
 [b]Stats:[/b]
@@ -20,7 +21,17 @@
 	opposed_pair Cool
 		Rash
 
+*if colony_founded
+	*line_break
+	[b]Colony:[/b]
+	*stat_chart
+		percent Food
+		percent Water
+		percent Power
+		percent Happiness
+		text Population
 
+*line_break
 [b]Traits:[/b]
 e.g. Engineering Expertise, Agricultural Expertise, Technological Expertise, etc.
 - not a numerical stat, but rather a single "property" of the character, defined during character creation one way or another
@@ -30,26 +41,30 @@ e.g. Engineering Expertise, Agricultural Expertise, Technological Expertise, etc
 [b]Colony:[/b]
 
 Production / The colony's capacity to build things and get things done
+*line_break
 Infrastructure / The colony's logistical efficiency, and the availability of electricity and shelter
+*line_break
 Compassion / The colonists' sense of camaraderie and overall willingness to help others and work as a team
+*line_break
 Happiness / The colonists' overall morale and extent to which their needs other than base survival are being met
+*line_break
 Freedom / How free from relative oppression the colonists are
+*line_break
 Nourishment / The levels of food and water available to the colony
+*line_break
 Resources / How much raw material the colony has available to work with
+*line_break
 Technology / A measure of how much specialist knowledge is available to the colony
+*line_break
 Population / The number of people living in the colony, in arbitrary units
+*line_break
 Defence / The colony and colonists' overall effectiveness in combat scenarios
+*line_break
 
-///NOTE: I condensed colony resources and colony "character" stats into one. This gives us twenty stats, ten for ///the character and ten for the colony, so hopefully it won't be too overwhelming for the player. Let me know if ///there's something specific you think the stats are lacking (like a specific quality of either the character or ///colony important enough that it needs to be continually measured. I've probably forgotten something
+///NOTE: I condensed colony resources and colony "character" stats into one. This gives us twenty stats, ten for the character and ten for the colony, so hopefully it won't be too overwhelming for the player. Let me know if there's something specific you think the stats are lacking (like a specific quality of either the character or colony important enough that it needs to be continually measured. I've probably forgotten something
 
-[b]Secret:[/b]
+*comment [b]Secret:[/b]
 
-///NOTE: I had a vision of how the game might end, or rather a couple. We can have other stats being tracked in ///the background, ones that the player may or may not be aware exists. One example that I thought of that ties ///into a potential ending is Exploration %, or how much of Aurora's surface has been explored. If we were to
-///go hypothetically with that scenario where an FTL ship from Earth that left later than the Horizon but arrived
-///before it screwed the planet's ecology up with a terraformation attempt, then a high Exploration % would
-///dictate the chance at any given point of overall game progression for the colony to discover the remnants of
-///that ship's arrival base. Alternatively, we could have them find fragments of the Horizon, or other pods, or
-///somesuch.
+*comment I had a vision of how the game might end, or rather a couple. We can have other stats being tracked in the background, ones that the player may or may not be aware exists. One example that I thought of that ties into a potential ending is Exploration %, or how much of Aurora's surface has been explored. If we were to go hypothetically with that scenario where an FTL ship from Earth that left later than the Horizon but arrived before it screwed the planet's ecology up with a terraformation attempt, then a high Exploration % would dictate the chance at any given point of overall game progression for the colony to discover the remnants of that ship's arrival base. Alternatively, we could have them find fragments of the Horizon, or other pods, or somesuch.
 
-///NOTE: Also on the subject of endings, how about launching a ship into space to investigate the still-orbiting ///wreckage of the Horizon? We can easily say that maybe only the rear half of the ship broke off and had a ///decaying orbit, and the rest is still up there with consoles, flight data, perhaps even workable stasis pods
-///(though they will have powered down)
+*comment Also on the subject of endings, how about launching a ship into space to investigate the still-orbiting wreckage of the Horizon? We can easily say that maybe only the rear half of the ship broke off and had a decaying orbit, and the rest is still up there with consoles, flight data, perhaps even workable stasis pods (though they will have powered down)
