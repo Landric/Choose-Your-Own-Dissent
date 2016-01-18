@@ -23,8 +23,7 @@ Here you are, about to perform a duty few others wanted. Pod #5, primed for ejec
 *label pull_choice
 *choice
 	*if ((hesitations = 0) and (not(speech))) #Pull the lever before you have a chance to stop yourself
-		*if not(speech)
-			This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
+		This was how it had to be. No words necessary. They couldn't hear you, and even if they could, they would only be screaming and pleading with you not to do it.
 
 		*goto pull
 		
@@ -223,6 +222,12 @@ She pulls herself back around to the main bay and glides out of sight.
 
 *label report
 
+You use one of the guiding ropes to pull you into the lonely flight back to the command module. What just happened doesn't seem to have sunk in yet, and you hope against hope that it never does.
+
+You pull yourself into flight down the maintenance shaft, shaking your head slightly. Perhaps there's a certain cowardly Mission Commander still loitering around in the command module for you to take out your anger on.
+
+Sure enough, you arrive at the command module, and the Mission Commander is there, holding a SmartPanel, and looking at you expectantly.
+
 *if(pod_ejected = "#5")
 
 	You use one of the guiding ropes to pull you into the lonely flight back to the command module. What just happened doesn't seem to have sunk in yet, and you hope against hope that it never does.
@@ -276,11 +281,21 @@ She pulls herself back around to the main bay and glides out of sight.
 			*goto end
 *else
 
-	WHAT DID YOU DO?!
+	What do you tell him?
 
-	*page_break
+	*comment TODO: FILL IN THIS CHOICE
 
-	*goto end
+	*choice
+
+		#Lie about Pod #6
+			*page_break
+
+			*goto end
+
+		#Admit what you did
+			*page_break
+
+			*goto end
 
 
 *comment --------------------------------------------------------------------------------------
